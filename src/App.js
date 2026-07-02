@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
-const firstName = "Mohammed"; const lastName = "Sohel";
-const greeting = `Hello, ${firstName} ${lastName}!`;
+function App() {
 
-export default function App() { return (
- 
-<div>
-<h1>{greeting}</h1>
-<p>{`Your name has ${firstName.length + lastName.length}
-characters.`}</p>
-<p>{`Today's date is: ${new
-Date().toLocaleDateString("en-GB")}`}</p>
-</div>
-);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  return (
+    <div>
+
+      <h1>Conditional Rendering</h1>
+
+      {
+        loggedIn
+          ? <h2>Welcome Mohammed</h2>
+          : <h2>Please Login</h2>
+      }
+
+      <button
+        onClick={() => setLoggedIn(!loggedIn)}
+      >
+        Toggle
+      </button>
+
+    </div>
+  );
 }
+
+export default App;
