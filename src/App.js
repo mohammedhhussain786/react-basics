@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
 
-  const handleClick = () => {
-    alert("Button Clicked");
-  };
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div>
-      <h1>Button Event Example</h1>
 
-      <button onClick={handleClick}>
-        Click Me
+      <h1>Conditional Rendering</h1>
+
+      {
+        loggedIn
+          ? <h2>Welcome User</h2>
+          : <h2>Please Login</h2>
+      }
+
+      <button
+        onClick={() => setLoggedIn(!loggedIn)}
+      >
+        Toggle
       </button>
+
     </div>
   );
 }
