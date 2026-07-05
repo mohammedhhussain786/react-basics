@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
 
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
+  const handleClick = () => {
+    alert("Button Clicked");
   };
 
   return (
     <div>
-      <h1>Functional Counter</h1>
+      <h1>Button Event Example</h1>
 
-      <h2>{count}</h2>
-
-      <button onClick={increment}>
-        Increment
+      <button onClick={handleClick}>
+        Click Me
       </button>
     </div>
   );
